@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "dramatiq-test"
+version = "0.1.0"
+description = "A test using Python and Dramatiq"
+authors = ["garibaldiviolin"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dramatiq = {extras = ["rabbitmq", "watch"], version = "^1.15.0"}
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+disable_error_code = [
+    "misc",
+    "import-untyped",
+    "no-any-return",
+    "unused-ignore"
+]
